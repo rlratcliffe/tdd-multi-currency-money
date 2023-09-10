@@ -14,7 +14,7 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 - equal object
 - ~~5 CHF * 2 = 10 CHF~~
 - Dollar/Franc duplication
-- Common equals
+- ~~Common equals~~
 - Common times
 
 ## Quotes
@@ -26,3 +26,5 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 "Failure is progress."
 
 "TDD is not about taking teeny-tiny steps, it's about *being able* to take teeny-tiny steps."
+
+"There is a fabulous sequence in *Crossing to Safety* in which author Wallace Stegner describes a character's workshop. Every item is perfectly in place, the floor is spotless, all is order and cleanliness. The character, however, has never made anything."

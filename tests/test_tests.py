@@ -18,8 +18,18 @@ def test_equality():
     assert Money.franc(5) != Money.franc(6)
     assert Money.franc(5) != Money.dollar(5)
 
+def test_currency():
+    assert "USD" == Money.dollar(1).currency
+    assert "CHF" == Money.franc(1).currency
+
+def test_cannot_change_currency():
+    with pytest.raises(AttributeError):
+        five = Money.dollar(5)
+        five.currency = "CHF"
+        assert five.currency == "USD"
+
 def test_cannot_change_amount():
     with pytest.raises(AttributeError):
         five = Money.dollar(5)
         five.amount = 6
-        assert five.amount() == 6
+        assert five.amount == 6

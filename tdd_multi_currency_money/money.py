@@ -10,6 +10,10 @@ class Money(ABC):
     def times(muliplier):
         pass
 
+    @property
+    def currency(self):
+        return self._currency
+
     @staticmethod
     def dollar(amount):
         from tdd_multi_currency_money.dollar import Dollar

@@ -1,7 +1,7 @@
 import logging
-from abc import ABC,abstractmethod
+from tdd_multi_currency_money.expression import Expression
 
-class Money(ABC):
+class Money(Expression):
     @property
     def amount(self):
         return self._amount
@@ -12,6 +12,9 @@ class Money(ABC):
 
     def times(self, multiplier):
         return Money(self._amount * multiplier, self._currency)
+
+    def plus(self, addend):
+        return Money(self._amount + addend.amount, self._currency)
 
     @property
     def currency(self):

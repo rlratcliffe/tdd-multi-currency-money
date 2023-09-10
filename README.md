@@ -4,21 +4,7 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 ## TODOs (copied from book)
 
 - $5 + 10 CHF = $10 if rate is 2:1
-- ~~$5 * 2 = $10~~
-- ~~Make "amount" private~~
-- ~~Dollar side-effects?~~
-- Money rounding
-- ~~equals()~~
-- hashCode()
-- equal null
-- equal object
-- ~~5 CHF * 2 = 10 CHF~~
-- ~~Dollar/Franc duplication~~
-- ~~Common equals~~
-- ~~Common times~~
-- ~~Compare Francs with Dollars~~
-- ~~Currency?~~
-- ~~Delete testFrancMultiplication?~~
+- **$5 + $5 = $10**
 
 ## Quotes
 

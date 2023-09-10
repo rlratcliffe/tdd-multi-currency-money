@@ -8,7 +8,10 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 - Make "amount" private
 - ~~Dollar side-effects?~~
 - Money rounding
-
+- ~~equals()~~
+- hashCode()
+- equal null
+- equal object
 
 ## Quotes
 

@@ -12,6 +12,7 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 - hashCode()
 - equal null
 - equal object
+- 5 CHF * 2 = 10 CHF
 
 ## Quotes
 

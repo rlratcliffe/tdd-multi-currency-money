@@ -13,11 +13,11 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 - equal null
 - equal object
 - ~~5 CHF * 2 = 10 CHF~~
-- Dollar/Franc duplication
+- **Dollar/Franc duplication**
 - ~~Common equals~~
 - Common times
 - ~~Compare Francs with Dollars~~
-- **Currency?**
+- ~~Currency?~~
 - Delete testFrancMultiplication?
 
 ## Quotes

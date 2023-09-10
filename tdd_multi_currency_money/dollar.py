@@ -9,7 +9,7 @@ class Dollar:
     def times(self, multiplier):
         return Dollar(self.amount * multiplier)
 
-    def equals(self, dollar):
+    def __eq__(self, dollar):
         # not sure how to cast here, dollar isn't type safe
         logging.debug("Calculating: " + str(self.amount) + " == " + str(dollar.amount))
         return self.amount == dollar.amount

@@ -8,5 +8,5 @@ def test_multiplication():
     assert 15 == product.amount
 
 def test_equality():
-    assert Dollar(5).equals(Dollar(5))
-    assert not Dollar(5).equals(Dollar(6))
+    assert Dollar(5) == Dollar(5) 
+    assert Dollar(5) != Dollar(6)

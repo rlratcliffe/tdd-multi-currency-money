@@ -19,13 +19,11 @@ class Money(ABC):
 
     @staticmethod
     def dollar(amount):
-        from tdd_multi_currency_money.dollar import Dollar
-        return Dollar(amount, "USD")
+        return Money(amount, "USD")
 
     @staticmethod
     def franc(amount):
-        from tdd_multi_currency_money.franc import Franc
-        return Franc(amount, "CHF")
+        return Money(amount, "CHF")
 
     def __eq__(self, money):
         # not sure how to cast here, money isn't type safe

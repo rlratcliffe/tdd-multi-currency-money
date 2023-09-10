@@ -1,5 +1,6 @@
 import pytest
 from tdd_multi_currency_money.dollar import Dollar
+from tdd_multi_currency_money.franc import Franc
 
 def test_dollar_multiplication():
     five = Dollar(5)

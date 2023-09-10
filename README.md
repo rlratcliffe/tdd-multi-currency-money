@@ -4,7 +4,7 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 ## TODOs (copied from book)
 
 - $5 + 10 CHF = $10 if rate is 2:1
-- **$5 * 2 = $10**
+- ~~$5 * 2 = $10~~
 - Make "amount" private
 - Dollar side-effects?
 - Money rounding
@@ -17,3 +17,5 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 "Test-driven development is a way of managing fear during programming"
 
 "Failure is progress."
+
+"TDD is not about taking teeny-tiny steps, it's about *being able* to take teeny-tiny steps."

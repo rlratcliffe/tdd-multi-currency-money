@@ -16,6 +16,8 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 - Dollar/Franc duplication
 - ~~Common equals~~
 - Common times
+- ~~Compare Francs with Dollars~~
+- Currency?
 
 ## Quotes
 

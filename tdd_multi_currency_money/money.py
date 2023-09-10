@@ -10,9 +10,8 @@ class Money(ABC):
         self._amount = amount
         self._currency = currency
 
-    @abstractmethod
-    def times(muliplier):
-        pass
+    def times(self, multiplier):
+        return Money(self._amount * multiplier, self._currency)
 
     @property
     def currency(self):
@@ -29,6 +28,6 @@ class Money(ABC):
         return Franc(amount, "CHF")
 
     def __eq__(self, money):
-        # not sure how to cast here, dollar isn't type safe
+        # not sure how to cast here, money isn't type safe
         logging.debug("Calculating: " + str(self._amount) + " == " + str(money.amount))
-        return self._amount == money.amount and type(self) == type(money)
+        return self._amount == money.amount and self._currency == money.currency

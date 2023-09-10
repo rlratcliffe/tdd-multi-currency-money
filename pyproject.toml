@@ -10,6 +10,9 @@ packages = [{include = "tdd_multi_currency_money"}]
 python = "^3.10"
 pytest = "^7.4.2"
 
+[tool.pytest.ini_options]
+log_cli = "True"
+log_cli_level = "DEBUG"
 
 [build-system]
 requires = ["poetry-core"]

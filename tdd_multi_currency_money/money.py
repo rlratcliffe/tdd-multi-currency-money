@@ -14,7 +14,8 @@ class Money(Expression):
         return Money(self._amount * multiplier, self._currency)
 
     def plus(self, addend):
-        return Money(self._amount + addend.amount, self._currency)
+        from tdd_multi_currency_money.sum import Sum
+        return Sum(self, addend)
 
     @property
     def currency(self):
@@ -27,6 +28,9 @@ class Money(Expression):
     @staticmethod
     def franc(amount):
         return Money(amount, "CHF")
+
+    def reduce(self, to):
+        return self
 
     def __eq__(self, money):
         # not sure how to cast here, money isn't type safe

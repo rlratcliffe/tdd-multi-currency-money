@@ -4,4 +4,4 @@ from tdd_multi_currency_money.money import Money
 class Bank:
     
     def reduce(self, source: Expression, to: str):
-        return Money.dollar(10)
+        return source.reduce(to)

@@ -9,6 +9,7 @@ packages = [{include = "tdd_multi_currency_money"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 pytest = "^7.4.2"
+numpy = "1.22.0"
 
 [tool.pytest.ini_options]
 log_cli = "True"

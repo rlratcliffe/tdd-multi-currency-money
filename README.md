@@ -4,11 +4,11 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 ## TODOs (copied from book)
 
 - $5 + 10 CHF = $10 if rate is 2:1
-- **$5 + $5 = $10**
+- ~~$5 + $5 = $10~~
 - Return Money from $5 + $5
 - ~~Bank.reduce(Money)~~
-- **Reduce Money with conversion**
-- Reduce(Bank, String)
+- ~~Reduce Money with conversion~~
+- ~~Reduce(Bank, String)~~
 
 ## Quotes
 
@@ -21,3 +21,7 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 "TDD is not about taking teeny-tiny steps, it's about *being able* to take teeny-tiny steps."
 
 "There is a fabulous sequence in *Crossing to Safety* in which author Wallace Stegner describes a character's workshop. Every item is perfectly in place, the floor is spotless, all is order and cleanliness. The character, however, has never made anything."
+
+## Lessons Learned
+
+If you're stuck, write lower tests to isolate the problem.

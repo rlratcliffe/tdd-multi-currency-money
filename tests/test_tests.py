@@ -1,7 +1,9 @@
 import pytest
+import numpy as np
 from tdd_multi_currency_money.money import Money
 from tdd_multi_currency_money.bank import Bank
 from tdd_multi_currency_money.sum import Sum
+from tdd_multi_currency_money.pair import _Pair
 
 def test_dollar_multiplication():
     five = Money.dollar(5)
@@ -40,13 +42,17 @@ def test_reduce_money_different_currency():
     result = bank.reduce(Money.franc(2), "USD")
     assert Money.dollar(1) == result
 
+def test_identity_rate():
+    assert 1 == Bank().rate("USD", "USD")
+
 def test_simple_addition():
     five = Money.dollar(5)
     sum = five.plus(five)
     bank = Bank()
     reduced = bank.reduce(sum, "USD")
     assert Money.dollar(10) == reduced
-    
+
+# Helper/intermediary tests
 def test_cannot_change_currency():
     with pytest.raises(AttributeError):
         five = Money.dollar(5)
@@ -58,3 +64,26 @@ def test_cannot_change_amount():
         five = Money.dollar(5)
         five.amount = 6
         assert five.amount == 6
+
+def test_dict_with_key():
+    newDict = dict()
+    key = _Pair("CHF", "USD")
+    newDict.update({key: int(2)})
+    assert newDict.get(key) == 2
+    assert newDict.get(_Pair("CHF", "USD")) == 2
+
+def test_pairs_are_equal():
+    assert _Pair("CHF", "USD") == _Pair("CHF", "USD")
+
+def test_array_equals():
+    array = []
+    array.append({"abc"})
+    arrayTwo = []
+    arrayTwo.append({"abc"})
+    assert array == arrayTwo
+    assert np.array({"abc"}) == np.array({"abc"})
+
+def test_dict_with_key_as_str():
+    newDict = dict()
+    newDict.update({"TestKey": int(2)})
+    assert newDict.get("TestKey") == 2

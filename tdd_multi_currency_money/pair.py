@@ -13,6 +13,10 @@ class _Pair:
 
     def __eq__(self, __o: object) -> bool:
         return self._strFrom == __o.strFrom and self._strTo == __o.strTo
-    
+
+    def __str__(self) -> str:
+        return self._strFrom + "-" + self._strTo
+
     def __hash__(self) -> int:
-        return 0
+        val = hash(str(self))
+        return val

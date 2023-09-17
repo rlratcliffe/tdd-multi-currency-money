@@ -31,6 +31,7 @@ class Money(Expression):
 
     def reduce(self, bank: 'Bank', to: str):
         rate = bank.rate(self._currency, to)
+        logging.debug("Rate is: " + str(rate))
         return Money(self._amount / rate, to)
 
     def __eq__(self, money):

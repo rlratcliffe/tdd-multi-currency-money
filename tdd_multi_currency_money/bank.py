@@ -17,4 +17,4 @@ class Bank:
         self._rates.update(newInputToDict)
 
     def rate(self, strFrom, strTo) -> int:
-        return self._rates.get(_Pair(strFrom, strTo))
+        return 1 if strFrom == strTo else self._rates.get(_Pair(strFrom, strTo))

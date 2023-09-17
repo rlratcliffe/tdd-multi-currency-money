@@ -10,6 +10,7 @@ packages = [{include = "tdd_multi_currency_money"}]
 python = "^3.10"
 pytest = "^7.4.2"
 numpy = "1.22.0"
+mypy = "^1.5.1"
 
 [tool.pytest.ini_options]
 log_cli = "True"

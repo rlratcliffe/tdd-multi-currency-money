@@ -1,9 +1,11 @@
 import pytest
 import numpy as np
+import logging
 from tdd_multi_currency_money.money import Money
 from tdd_multi_currency_money.bank import Bank
 from tdd_multi_currency_money.sum import Sum
 from tdd_multi_currency_money.pair import _Pair
+from tdd_multi_currency_money.expression import Expression
 
 def test_dollar_multiplication():
     five = Money.dollar(5)
@@ -44,6 +46,14 @@ def test_reduce_money_different_currency():
 
 def test_identity_rate():
     assert 1 == Bank().rate("USD", "USD")
+
+def test_mixed_addition():
+    fiveBucks: Expression = Money.dollar(5)
+    tenFrancs: Expression = Money.franc(10)
+    bank: Bank = Bank()
+    bank.addRate("CHF", "USD", 2)
+    result: Money = bank.reduce(fiveBucks.plus(tenFrancs), "USD")
+    assert Money.dollar(10) == result
 
 def test_simple_addition():
     five = Money.dollar(5)

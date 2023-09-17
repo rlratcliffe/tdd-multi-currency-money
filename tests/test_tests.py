@@ -34,6 +34,12 @@ def test_reduce_sum():
     result = bank.reduce(sum, "USD")
     assert Money.dollar(7) == result
 
+def test_reduce_money_different_currency():
+    bank = Bank()
+    bank.addRate("CHF", "USD", 2)
+    result = bank.reduce(Money.franc(2), "USD")
+    assert Money.dollar(1) == result
+
 def test_simple_addition():
     five = Money.dollar(5)
     sum = five.plus(five)

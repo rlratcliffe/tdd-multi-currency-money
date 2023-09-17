@@ -1,5 +1,5 @@
 from abc import ABC
 
 class Expression(ABC):
-    def reduce(to):
+    def reduce(bank: 'Bank', to: str):
         pass

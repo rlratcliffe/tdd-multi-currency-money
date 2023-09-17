@@ -29,8 +29,9 @@ class Money(Expression):
     def franc(amount):
         return Money(amount, "CHF")
 
-    def reduce(self, to):
-        return self
+    def reduce(self, bank: 'Bank', to: str):
+        rate = bank.rate(self._currency, to)
+        return Money(self._amount / rate, to)
 
     def __eq__(self, money):
         # not sure how to cast here, money isn't type safe

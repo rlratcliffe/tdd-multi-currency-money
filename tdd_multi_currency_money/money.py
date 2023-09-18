@@ -1,40 +1,48 @@
 import logging
 from tdd_multi_currency_money.expression import Expression
+from tdd_multi_currency_money.bank import Bank
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from tdd_multi_currency_money.sum import Sum
 
 class Money(Expression):
     @property
-    def amount(self):
+    def amount(self) -> int:
         return self._amount
 
-    def __init__(self, amount, currency):
+    @property
+    def currency(self) -> str:
+        return self._currency
+
+    def __init__(self, amount: int, currency: str):
         self._amount = amount
         self._currency = currency
 
-    def times(self, multiplier):
+    def times(self, multiplier) -> 'Money':
         return Money(self._amount * multiplier, self._currency)
 
-    def plus(self, addend):
+    def plus(self, addend) -> 'Sum':
         from tdd_multi_currency_money.sum import Sum
         return Sum(self, addend)
 
-    @property
-    def currency(self):
-        return self._currency
-
     @staticmethod
-    def dollar(amount):
+    def dollar(amount) -> 'Money':
         return Money(amount, "USD")
 
     @staticmethod
-    def franc(amount):
+    def franc(amount) -> 'Money':
         return Money(amount, "CHF")
 
-    def reduce(self, bank: 'Bank', to: str):
+    def reduce(self, bank: Bank, to: str) -> 'Money':
         rate = bank.rate(self._currency, to)
         logging.debug("Rate is: " + str(rate))
-        return Money(self._amount / rate, to)
+        return Money(int(self._amount / rate), to)
 
-    def __eq__(self, money):
-        # not sure how to cast here, money isn't type safe
+    def __eq__(self, money: object):
+        if not isinstance(money, Money):
+            return NotImplemented
+
         logging.debug("Calculating: " + str(self._amount) + " == " + str(money.amount))
         return self._amount == money.amount and self._currency == money.currency

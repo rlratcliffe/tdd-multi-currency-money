@@ -1,5 +1,6 @@
 from tdd_multi_currency_money.money import Money
 from tdd_multi_currency_money.expression import Expression
+from tdd_multi_currency_money.bank import Bank
 
 class Sum(Expression):
     @property
@@ -14,6 +15,6 @@ class Sum(Expression):
         self._augend = augend
         self._addend = addend
 
-    def reduce(self, bank: 'Bank', to):
+    def reduce(self, bank: Bank, to):
         amount = self._augend.amount + self._addend.amount
         return Money(amount, to)

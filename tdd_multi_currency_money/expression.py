@@ -1,10 +1,12 @@
-from abc import ABC
+from abc import ABC,abstractmethod
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from tdd_multi_currency_money.bank import Bank
+    from tdd_multi_currency_money.money import Money
 
 class Expression(ABC):
-    
-    def reduce(self, bank: 'Bank', to: str):
+
+    @abstractmethod
+    def reduce(self, bank: 'Bank', to: str) -> 'Money':
         pass

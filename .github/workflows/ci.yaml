@@ -37,6 +37,6 @@ jobs:
 
       - run: poetry install --no-interaction
 
-      - run: poetry run mypy .
+      - run: poetry run mypy . --check-untyped-defs
 
       - run: poetry run pytest

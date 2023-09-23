@@ -17,8 +17,8 @@ class Money(Expression):
         return self._currency
 
     def __init__(self, amount: int, currency: str):
-        self._amount = amount
-        self._currency = currency
+        self._amount: int = amount
+        self._currency: str = currency
 
     def times(self, multiplier) -> 'Money':
         return Money(self._amount * multiplier, self._currency)
@@ -36,7 +36,7 @@ class Money(Expression):
         return Money(amount, "CHF")
 
     def reduce(self, bank: Bank, to: str) -> 'Money':
-        rate = bank.rate(self._currency, to)
+        rate: int = bank.rate(self._currency, to)
         logging.debug("Rate is: " + str(rate))
         return Money(int(self._amount / rate), to)
 

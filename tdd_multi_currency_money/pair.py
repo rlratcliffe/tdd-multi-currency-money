@@ -8,8 +8,8 @@ class _Pair:
         return self._strTo
 
     def __init__(self, strFrom: str, strTo: str):
-        self._strFrom = strFrom
-        self._strTo = strTo
+        self._strFrom: str = strFrom
+        self._strTo: str = strTo
 
     def __eq__(self, __o: object) -> bool:
         if not isinstance(__o, _Pair):
@@ -20,5 +20,4 @@ class _Pair:
         return self._strFrom + "-" + self._strTo
 
     def __hash__(self) -> int:
-        val = hash(str(self))
-        return val
+        return hash(str(self))

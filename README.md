@@ -9,7 +9,7 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 - ~~Bank.reduce(Money)~~
 - ~~Reduce Money with conversion~~
 - ~~Reduce(Bank, String)~~
-- Sum.plus
+- **Sum.plus**
 - Expression.times
 
 ## Quotes

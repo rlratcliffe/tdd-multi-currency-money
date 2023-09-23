@@ -62,6 +62,15 @@ def test_mixed_addition():
     result: Money = bank.reduce(fiveBucks.plus(tenFrancs), "USD")
     assert Money.dollar(10) == result
 
+def test_sum_plus_money():
+    fiveBucks: Expression = Money.dollar(5)
+    tenFrancs: Expression = Money.franc(10)
+    bank: Bank = Bank()
+    bank.addRate("CHF", "USD", 2)
+    sum: Expression = Sum(fiveBucks, tenFrancs).plus(fiveBucks)
+    result = bank.reduce(sum, "USD")
+    assert Money.dollar(15) == result
+
 # Helper/intermediary tests
 def test_rate_with_no_key():
     bank: Bank = Bank()

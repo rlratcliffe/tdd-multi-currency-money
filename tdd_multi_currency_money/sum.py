@@ -20,7 +20,5 @@ class Sum(Expression):
         + self._addend.reduce(bank, to).amount
         return Money(amount, to)
 
-    # mypy failing since this is returning nothing for now
-    # add '-> Expression' return type back later
-    def plus(self, addend: Expression):
-        pass
+    def plus(self, addend: Expression) -> Expression:
+       return Sum(self, addend)

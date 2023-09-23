@@ -1,5 +1,5 @@
-import pytest
 import numpy as np
+from typing import cast
 from tdd_multi_currency_money.money import Money
 from tdd_multi_currency_money.bank import Bank
 from tdd_multi_currency_money.sum import Sum
@@ -27,8 +27,8 @@ def test_reduce_money():
 
 def test_plus_returns_sum():
     five: Money = Money.dollar(5)
-    # pg 62 has casting of Expression to Sum, but not going to try to fix/do that right now
-    sum: Sum = five.plus(five)
+    result: Expression = five.plus(five)
+    sum: Sum = cast(Sum, result)
     assert five == sum.augend
     assert five == sum.addend
 
@@ -49,10 +49,18 @@ def test_identity_rate():
 
 def test_simple_addition():
     five: Money = Money.dollar(5)
-    sum: Sum = five.plus(five)
+    sum: Expression = five.plus(five)
     bank: Bank = Bank()
     reduced: Money = bank.reduce(sum, "USD")
     assert Money.dollar(10) == reduced
+
+def test_mixed_addition():
+    fiveBucks: Expression = Money.dollar(5)
+    tenFrancs: Expression = Money.franc(10)
+    bank: Bank = Bank()
+    bank.addRate("CHF", "USD", 2)
+    result: Money = bank.reduce(fiveBucks.plus(tenFrancs), "USD")
+    assert Money.dollar(10) == result
 
 # Helper/intermediary tests
 def test_rate_with_no_key():

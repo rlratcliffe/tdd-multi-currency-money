@@ -6,6 +6,9 @@ if TYPE_CHECKING:
     from tdd_multi_currency_money.money import Money
 
 class Expression(ABC):
+    @abstractmethod
+    def plus(self, addend: 'Expression') -> 'Expression':
+        pass
 
     @abstractmethod
     def reduce(self, bank: 'Bank', to: str) -> 'Money':

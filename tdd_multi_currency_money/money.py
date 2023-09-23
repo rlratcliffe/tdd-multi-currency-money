@@ -20,10 +20,10 @@ class Money(Expression):
         self._amount: int = amount
         self._currency: str = currency
 
-    def times(self, multiplier) -> 'Money':
+    def times(self, multiplier) -> Expression:
         return Money(self._amount * multiplier, self._currency)
 
-    def plus(self, addend) -> 'Sum':
+    def plus(self, addend: Expression) -> Expression:
         from tdd_multi_currency_money.sum import Sum
         return Sum(self, addend)
 

@@ -3,12 +3,14 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 
 ## TODOs (copied from book)
 
-- $5 + 10 CHF = $10 if rate is 2:1
+- ~~$5 + 10 CHF = $10 if rate is 2:1~~
 - ~~$5 + $5 = $10~~
 - Return Money from $5 + $5
 - ~~Bank.reduce(Money)~~
 - ~~Reduce Money with conversion~~
 - ~~Reduce(Bank, String)~~
+- Sum.plus
+- Expression.times
 
 ## Quotes
 

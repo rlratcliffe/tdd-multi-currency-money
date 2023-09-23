@@ -71,6 +71,15 @@ def test_sum_plus_money():
     result = bank.reduce(sum, "USD")
     assert Money.dollar(15) == result
 
+def test_sum_times():
+    fiveBucks: Expression = Money.dollar(5)
+    tenFrancs: Expression = Money.franc(10)
+    bank: Bank = Bank()
+    bank.addRate("CHF", "USD", 2)
+    sum: Expression = Sum(fiveBucks, tenFrancs).times(2)
+    result = bank.reduce(sum, "USD")
+    Money.dollar(20) == result
+
 # Helper/intermediary tests
 def test_rate_with_no_key():
     bank: Bank = Bank()

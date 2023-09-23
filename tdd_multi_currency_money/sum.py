@@ -22,3 +22,6 @@ class Sum(Expression):
 
     def plus(self, addend: Expression) -> Expression:
        return Sum(self, addend)
+
+    def times(self, multiplier: int) -> Expression:
+        return Sum(self._augend.times(multiplier), self._addend.times(multiplier))

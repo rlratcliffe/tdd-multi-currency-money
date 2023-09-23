@@ -13,3 +13,7 @@ class Expression(ABC):
     @abstractmethod
     def reduce(self, bank: 'Bank', to: str) -> 'Money':
         pass
+
+    @abstractmethod
+    def times(self, multiplier: int) -> 'Expression':
+        pass

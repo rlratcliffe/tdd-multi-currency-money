@@ -12,6 +12,10 @@ Part 1 of 'Test-Driven Devlopment by Example' by Kent Beck
 - ~~Sum.plus~~
 - ~~Expression.times~~
 
+## Development
+
+View the github workflow as it shows what is required for development. `mypy` is used for type checking and `pytest` is used for unit testing.
+
 ## Quotes
 
 "If the defect density can be reduced enough, then quality assurance can shift from reactive work to proactive work."
